@@ -1,3 +1,0 @@
-# exoticnepal
-# exoticnepal
-# exoticnepal
