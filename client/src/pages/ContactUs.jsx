@@ -18,12 +18,12 @@ const ContactUs = () => {
                     <div className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow">
                         <Phone className="h-6 w-6 text-violet-600 mb-2" />
                         <h3 className="font-semibold text-violet-700">Call Us</h3>
-                        <p className="text-sm text-gray-600">+977-9800000000</p>
+                        <p className="text-sm text-gray-600">+977-9704578695</p>
                     </div>
 
                     {/* WhatsApp */}
                     <a
-                        href="https://wa.me/9779800000000"
+                        href="https://wa.me/+9779704578695"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow"

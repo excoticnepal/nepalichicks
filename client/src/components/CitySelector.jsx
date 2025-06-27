@@ -10,8 +10,8 @@ export default function CitySelector({  onSelectCity, onClose }) {
     useEffect(() => {
       const fetchCities = async () => {
         try {
-          const response = await axios.get("http://localhost:5174/api/city/all-cities");
-          setCities(response.data); // assuming response.data is an array of cities
+          const response = await axios.get("https://exoticnepal-backend.vercel.app/api/city/all-cities");
+          setCities(response.data); 
         } catch (error) {
           console.error("Error fetching cities:", error);
           alert("Failed to load cities.");

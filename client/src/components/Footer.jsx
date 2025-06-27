@@ -11,7 +11,7 @@ const Footer = ({onSearchClick, onAboutClick, onCitiesClick }) => {
                     <div>
                         <div className="flex items-center space-x-2 mb-4">
                             <Heart className="h-6 w-6 text-rose-100" />
-                            <span className="text-xl font-bold">Exotic Nepal</span>
+                            <span className="text-xl font-bold">Nepali Chicks</span>
                         </div>
                         <p className="text-gray-100 mb-4 text-base">
                             Nepal's most trusted Call Girl platform connecting souls across the country.

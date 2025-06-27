@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import SearchButton from './SearchButton';
+import { useNavigate } from 'react-router-dom';
 
 const Header = ({ onSearchClick }) => {
+  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
 
@@ -18,7 +20,7 @@ const Header = ({ onSearchClick }) => {
 
   return (
     <div className="bg-violet-800 text-white px-4 py-3 flex justify-between items-center relative">
-      <div className="text-xl font-bold">Exotic Nepal</div>
+      <div className="text-xl font-bold cursor-pointer" onClick={()=>navigate('/')} >Nepali Chicks</div>
       <div className="flex items-center gap-4">
         <SearchButton onClick={onSearchClick} />
         {/* <button className="hidden md:block bg-white text-violet-800 font-semibold px-3 py-1 rounded">

@@ -14,7 +14,7 @@ const ProfilePage = () => {
     const fetchUser = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`http://localhost:5174/api/user/${id}`);
+        const res = await axios.get(`https://exoticnepal-backend.vercel.app/api/user/${id}`);
         setUser(res.data.user);
       } catch (err) {
         setError(err.message || "Something went wrong");
@@ -95,7 +95,7 @@ const ProfilePage = () => {
           <p><strong>Price:</strong> {user.price || 'Free'}</p>
           <div className="mt-4">
             <a
-              href={`https://wa.me/977${user.phone}`}
+              href={`https://wa.me/+9779704578695`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors"

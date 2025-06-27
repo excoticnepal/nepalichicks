@@ -8,7 +8,6 @@ import AnimatedContent from "../animations/AnimatedContent";
 import Stepper, { Step } from "../animations/Stepper";
 import { MessageCircle, Shield, Star, MapPin, UserLock, BriefcaseMedical } from "lucide-react"
 import Card from "../animations/Card";
-import Footer from "../components/Footer";
 
 const Home = () => {
   const aboutRef = useRef(null);
@@ -83,7 +82,7 @@ const Home = () => {
               threshold={0.3}
               delay={0.6}
             >
-              <div className="sm:text-3xl text-lg font-bold text-white">Exotic Nepal</div>
+              <div className="sm:text-3xl text-lg font-bold text-white">Nepali Chicks</div>
             </AnimatedContent>
             <AnimatedContent
               distance={250}
