@@ -10,14 +10,14 @@ const AddUser = () => {
   const onSubmit = async (data) => {
     try {
       const token = localStorage.getItem("token");
-  
+
       const formData = new FormData();
       const payload = {
         name: data.name,
-        city: data.city,
+        city: data.city.split(',').map(c => c.trim()),
         age: data.age,
         gender: data.gender,
-        type: data.type,
+        // type: data.type,
         height: data.height,
         weight: data.weight,
         description: data.description,
@@ -29,14 +29,14 @@ const AddUser = () => {
         image5: data.image5,
         image6: data.image6,
       };
-      
+
       const response = await axios.post("https://exoticnepal-backend.vercel.app/api/user/add-user", payload, {
         headers: {
           Authorization: `Bearer ${token}`,
           "Content-Type": "application/json",
         },
       });
-      
+
 
       alert("User added successfully!");
       console.log(response.data);
@@ -63,7 +63,7 @@ const AddUser = () => {
         {/* City */}
         <input
           type="text"
-          placeholder="City"
+          placeholder="Cities (comma-separated)"
           className="w-full p-2 border border-gray-400 rounded-md mb-2"
           {...register("city", { required: "City is required" })}
         />
@@ -91,13 +91,13 @@ const AddUser = () => {
         <p className="text-red-500 text-sm mb-6">{errors.gender?.message}</p>
 
         {/* Type */}
-        <input
+        {/* <input
           type="text"
           placeholder="Type"
           className="w-full p-2 border border-gray-400 rounded-md mb-2"
           {...register("type", { required: "Type is required" })}
         />
-        <p className="text-red-500 text-sm mb-6">{errors.type?.message}</p>
+        <p className="text-red-500 text-sm mb-6">{errors.type?.message}</p> */}
 
         {/* Height */}
         <input
@@ -134,18 +134,18 @@ const AddUser = () => {
         <p className="text-red-500 text-sm mb-6">{errors.price?.message}</p>
         {/* Image URLs */}
         {[1, 2, 3, 4, 5, 6].map((num) => (
-  <div key={num}>
-    <input
-      type="url"
-      placeholder={`Image ${num} URL`}
-      className="w-full p-2 border border-gray-400 rounded-md mb-2"
-      {...register(`image${num}`, {
-        required: num === 1 ? `Image ${num} is required` : false,
-      })}
-    />
-    <p className="text-red-500 text-sm mb-6">{errors[`image${num}`]?.message}</p>
-  </div>
-))}
+          <div key={num}>
+            <input
+              type="url"
+              placeholder={`Image ${num} URL`}
+              className="w-full p-2 border border-gray-400 rounded-md mb-2"
+              {...register(`image${num}`, {
+                required: num === 1 ? `Image ${num} is required` : false,
+              })}
+            />
+            <p className="text-red-500 text-sm mb-6">{errors[`image${num}`]?.message}</p>
+          </div>
+        ))}
 
 
         {/* Submit */}

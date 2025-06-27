@@ -7,7 +7,7 @@ const user = new Schema({
         required: true 
     },
     city: { 
-        type: String, 
+        type: [String], 
         required: true 
     },
     age: { 
@@ -17,10 +17,6 @@ const user = new Schema({
     gender: { 
         type: String, 
         enum: ['Male', 'Female', 'Other'], 
-        required: true 
-    },
-    type: { 
-        type: String, 
         required: true 
     }, 
     height: { 

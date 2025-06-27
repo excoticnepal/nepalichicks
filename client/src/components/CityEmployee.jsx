@@ -23,9 +23,14 @@ export default function CityEmployees() {
     fetchUsers();
   }, []);
 
-  const filteredUsers = users.filter(
-    user => user.city.toLowerCase() === cityName.toLowerCase()
-  );
+  const filteredUsers = users.filter(user => {
+    if (Array.isArray(user.city)) {
+      return user.city.some(c => c.trim().toLowerCase() === cityName.trim().toLowerCase());
+    }
+    return user.city?.trim().toLowerCase() === cityName.trim().toLowerCase();
+  });
+  
+  
 
   if (loading) {
     return (

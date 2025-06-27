@@ -87,7 +87,7 @@ const ProfilePage = () => {
         <div className="space-y-4 text-lg">
           <p><strong>Name:</strong> {user.name}</p>
           <p><strong>Gender:</strong> {user.gender}</p>
-          <p><strong>Type:</strong> {user.type}</p>
+          {/* <p><strong>Type:</strong> {user.type}</p> */}
           <p><strong>Age:</strong> {user.age ? `${user.age} years old` : 'N/A'}</p>
           <p><strong>Height:</strong> {user.height ? `${user.height} cm` : 'N/A'}</p>
           <p><strong>Weight:</strong> {user.weight ? `${user.weight} Kg` : 'N/A'}</p>
