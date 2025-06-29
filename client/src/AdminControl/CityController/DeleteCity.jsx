@@ -34,7 +34,7 @@ const DeleteCity = () => {
         try {
             const token = localStorage.getItem("token");
             const res = await axios.delete(
-                `http://localhost:5174/api/city/delete-city/${selectedCity._id}`,
+                `https://exoticnepal-backend.vercel.app/api/city/delete-city/${selectedCity._id}`,
                 {
                     headers: {
                         Authorization: `Bearer ${token}`, // Ensure 'token' is defined correctly
