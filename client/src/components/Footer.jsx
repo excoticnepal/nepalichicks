@@ -16,7 +16,7 @@ const Footer = ({onSearchClick, onAboutClick, onCitiesClick }) => {
                         <p className="text-gray-100 mb-4 text-base">
                             Nepal's most trusted Call Girl platform connecting souls across the country.
                         </p>
-                        <SearchButton onClick={onSearchClick}/>
+                        <SearchButton onClick={onSearchClick}/> 
                     </div>
 
 
