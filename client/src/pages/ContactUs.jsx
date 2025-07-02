@@ -3,8 +3,12 @@ import { Phone, Mail, MessageCircle } from "lucide-react";
 
 const ContactUs = () => {
     return (
-        <div className="min-h-screen bg-violet-100 flex items-center justify-center px-4 py-12">
-            <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full p-8  text-center">
+        <div className="min-h-screen bg-violet-100 flex flex-col items-center justify-center px-4 py-12">
+            <div className="text-violet-100 max-w-2xl w-full font-black text-sm">
+                Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Night Plan With Girls Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Nepali Call Girls Call Girls in Nepal Nepal Hot Girls Call Girls Excort In Nepal Nepal Girls
+                Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Call Girl Nepal Nepali Hot Girls Excort in Nepal Nepal Girls Girls Nepali Call Girl Hot Girls in Nepal Nepal Girls Nepali Girl
+            </div>
+            <div className="bg-white rounded-2xl shadow-xl max-w-2xl w-full p-8  text-center z-50">
                 <h2 className="text-3xl font-bold text-violet-700 mb-8">Contact Us</h2>
                 <p className="text-gray-600">
                     Having some trouble or need assistance? We're here to help!
