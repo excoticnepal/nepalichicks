@@ -25,17 +25,22 @@ const ContactUs = () => {
                         <p className="text-sm text-gray-600">+977-9704578695</p>
                     </div>
 
-                    {/* WhatsApp */}
-                    <a
-                        href="https://wa.me/+9779704578695"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow"
+                    {/* Tawk.to Live Chat */}
+                    <button
+                        onClick={() => {
+                            // Open Tawk.to chat widget
+                            if (window.Tawk_API) {
+                                window.Tawk_API.toggle();
+                            } else {
+                                alert('Chat is loading, please wait a moment...');
+                            }
+                        }}
+                        className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow cursor-pointer"
                     >
                         <MessageCircle className="h-6 w-6 text-violet-600 mb-2" />
-                        <h3 className="font-semibold text-violet-700">WhatsApp</h3>
+                        <h3 className="font-semibold text-violet-700">Live Chat</h3>
                         <p className="text-sm text-gray-600">Chat Instantly</p>
-                    </a>
+                    </button>
 
                     {/* Email */}
                     <a

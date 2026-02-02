@@ -30,8 +30,7 @@ const ProfilePage = () => {
   if (error) return <p className="text-center text-red-500 mt-10">Error: {error}</p>;
   if (!user) return <p className="text-center mt-10">No user found.</p>;
 
-
-  const images = [user.image2, user.image3, user.image4, user.image5, user.image6].filter(Boolean); ;
+  const images = [user.image2, user.image3, user.image4, user.image5, user.image6].filter(Boolean);
 
   return (
     <div className="p-4 flex flex-col items-center justify-center bg-violet-100">
@@ -41,47 +40,46 @@ const ProfilePage = () => {
         </h1>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full p-8 ">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full p-8">
         {/* Photo Section */}
         <div className="flex sm:flex-row flex-col-reverse items-center justify-center sm:border-r-2 border-r-0 border-b-2 sm:border-b-0 pb-2 gap-4">
-  <PhotoProvider>
-    <div className="flex sm:flex-col flex-row gap-2 justify-center items-center">
-      {user?.images?.length > 0 ? (
-        user.images.map((img, idx) => (
-          <PhotoView key={idx} src={img}>
-            <img
-              src={img}
-              className="w-[60px] h-[80px] object-cover rounded cursor-pointer"
-              alt={`Thumbnail ${idx}`}
-            />
-          </PhotoView>
-        ))
-      ) : (
-        <div className="flex sm:flex-col flex-row gap-1 justify-center items-center">
-          {images.map((src, i) => (
-            <PhotoView src={src} key={i}>
-              <img
-                src={src}
-                className="w-[60px] h-[80px] object-cover rounded cursor-pointer"
-              />
-            </PhotoView>
-          ))}
+          <PhotoProvider>
+            <div className="flex sm:flex-col flex-row gap-2 justify-center items-center">
+              {user?.images?.length > 0 ? (
+                user.images.map((img, idx) => (
+                  <PhotoView key={idx} src={img}>
+                    <img
+                      src={img}
+                      className="w-[60px] h-[80px] object-cover rounded cursor-pointer"
+                      alt={`Thumbnail ${idx}`}
+                    />
+                  </PhotoView>
+                ))
+              ) : (
+                <div className="flex sm:flex-col flex-row gap-1 justify-center items-center">
+                  {images.map((src, i) => (
+                    <PhotoView src={src} key={i}>
+                      <img
+                        src={src}
+                        className="w-[60px] h-[80px] object-cover rounded cursor-pointer"
+                      />
+                    </PhotoView>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <div className="flex justify-center items-center">
+              <PhotoView src={user.image1}>
+                <img
+                  src={user.image1}
+                  className="w-[300px] h-[400px] object-cover rounded cursor-pointer"
+                  alt="Profile"
+                />
+              </PhotoView>
+            </div>
+          </PhotoProvider>
         </div>
-      )}
-    </div>
-
-    <div className="flex justify-center items-center">
-      <PhotoView src={user.image1}>
-        <img
-          src={user.image1}
-          className="w-[300px] h-[400px] object-cover rounded cursor-pointer"
-          alt="Profile"
-        />
-      </PhotoView>
-    </div>
-  </PhotoProvider>
-</div>
-
 
         {/* User Info Section */}
         <div className="space-y-4 text-lg">
@@ -94,14 +92,18 @@ const ProfilePage = () => {
           <p><strong>Bio:</strong> {user.description || 'No bio available'}</p>
           <p><strong>Price:</strong> {user.price || 'Free'}</p>
           <div className="mt-4">
-            <a
-              href={`https://wa.me/+9779704578695`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors"
+            <button
+              onClick={() => {
+                if (window.Tawk_API) {
+                  window.Tawk_API.toggle();
+                } else {
+                  alert('Chat is loading, please wait a moment...');
+                }
+              }}
+              className="bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors cursor-pointer"
             >
               Contact {user.name}
-            </a>
+            </button>
           </div>
         </div>
       </div>
