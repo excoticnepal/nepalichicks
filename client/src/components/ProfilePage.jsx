@@ -92,19 +92,16 @@ const ProfilePage = () => {
           <p><strong>Bio:</strong> {user.description || 'No bio available'}</p>
           <p><strong>Price:</strong> {user.price || 'Free'}</p>
           <div className="mt-4">
-            <button
-              onClick={() => {
-                if (window.Tawk_API) {
-                  window.Tawk_API.toggle();
-                } else {
-                  alert('Chat is loading, please wait a moment...');
-                }
-              }}
-              className="bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors cursor-pointer"
+            <a
+              href="https://signal.me/#eu/olvljSbbwvw_87_M-bsm5VN9Tsxd7sa03TsxtfCd5jlcd4C9prhDlLb7Fl8SJFy7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors cursor-pointer"
             >
               Contact {user.name}
-            </button>
+            </a>
           </div>
+
         </div>
       </div>
     </div>

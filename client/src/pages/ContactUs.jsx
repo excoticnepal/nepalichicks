@@ -25,22 +25,18 @@ const ContactUs = () => {
                         <p className="text-sm text-gray-600">+977-9704578695</p>
                     </div>
 
-                    {/* Tawk.to Live Chat */}
-                    <button
-                        onClick={() => {
-                            // Open Tawk.to chat widget
-                            if (window.Tawk_API) {
-                                window.Tawk_API.toggle();
-                            } else {
-                                alert('Chat is loading, please wait a moment...');
-                            }
-                        }}
+                    {/* Signal Live Chat */}
+                    <a
+                        href="https://signal.me/#eu/olvljSbbwvw_87_M-bsm5VN9Tsxd7sa03TsxtfCd5jlcd4C9prhDlLb7Fl8SJFy7"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow cursor-pointer"
                     >
                         <MessageCircle className="h-6 w-6 text-violet-600 mb-2" />
                         <h3 className="font-semibold text-violet-700">Live Chat</h3>
-                        <p className="text-sm text-gray-600">Chat Instantly</p>
-                    </button>
+                        <p className="text-sm text-gray-600">Chat on Signal</p>
+                    </a>
+
 
                     {/* Email */}
                     <a
