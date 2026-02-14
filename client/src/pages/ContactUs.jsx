@@ -37,6 +37,19 @@ const ContactUs = () => {
                         <p className="text-sm text-gray-600">Chat on Signal</p>
                     </a>
 
+                    {/* WhatsApp */}
+                    <a
+                        href="https://wa.me/9779806438349"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow cursor-pointer"
+                    >
+                        <MessageCircle className="h-6 w-6 text-green-600 mb-2" />
+                        <h3 className="font-semibold text-violet-700">WhatsApp</h3>
+                        <p className="text-sm text-gray-600">Chat on WhatsApp</p>
+                    </a>
+
+
 
                     {/* Email */}
                     <a

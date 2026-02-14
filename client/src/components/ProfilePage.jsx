@@ -91,16 +91,30 @@ const ProfilePage = () => {
           <p><strong>Weight:</strong> {user.weight ? `${user.weight} Kg` : 'N/A'}</p>
           <p><strong>Bio:</strong> {user.description || 'No bio available'}</p>
           <p><strong>Price:</strong> {user.price || 'Free'}</p>
-          <div className="mt-4">
+          <div className="mt-4 flex flex-wrap gap-4">
+            {/* Signal Button */}
             <a
               href="https://signal.me/#eu/olvljSbbwvw_87_M-bsm5VN9Tsxd7sa03TsxtfCd5jlcd4C9prhDlLb7Fl8SJFy7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-block bg-violet-600 text-white px-6 py-2 rounded hover:bg-violet-700 transition-colors cursor-pointer"
             >
-              Contact {user.name}
+              Signal
+            </a>
+
+            {/* WhatsApp Button */}
+            <a
+              href={`https://wa.me/9779806438349?text=${encodeURIComponent(
+                `Hello, I want to book ${user.name}`
+              )}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-green-600 text-white px-6 py-2 rounded hover:bg-green-700 transition-colors cursor-pointer"
+            >
+              WhatsApp
             </a>
           </div>
+
 
         </div>
       </div>
