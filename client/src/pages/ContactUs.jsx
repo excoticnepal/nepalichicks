@@ -1,7 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import { Phone, Mail, MessageCircle } from "lucide-react";
+import { API_BASE } from "../config/api";
+
+const DEFAULT_WHATSAPP = "9779806438349";
 
 const ContactUs = () => {
+    const [whatsappNumber, setWhatsappNumber] = useState(DEFAULT_WHATSAPP);
+
+    useEffect(() => {
+        axios
+            .get(`${API_BASE}/api/settings`)
+            .then((res) => {
+                if (res.data?.whatsappNumber) {
+                    setWhatsappNumber(res.data.whatsappNumber);
+                }
+            })
+            .catch(() => {});
+    }, []);
+
     return (
         <div className="min-h-screen bg-violet-100 flex flex-col items-center justify-center px-4 py-12">
             <div className="text-violet-100 max-w-2xl w-full font-black text-sm">
@@ -39,7 +56,7 @@ const ContactUs = () => {
 
                     {/* WhatsApp */}
                     <a
-                        href="https://wa.me/9779806438349"
+                        href={`https://wa.me/${whatsappNumber}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="flex flex-col items-center p-4 bg-violet-50 rounded-xl hover:shadow transition-shadow cursor-pointer"

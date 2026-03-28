@@ -14,18 +14,6 @@ const Home = () => {
   const citiesRef = useRef(null);
   const homeRef = useRef(null);
 
-  const menuRef = useRef(null);
-
-  useEffect(() => {
-    const handleOutsideClick = (e) => {
-      if (menuRef.current && !menuRef.current.contains(e.target)) {
-        setMenuOpen(false);
-      }
-    };
-    document.addEventListener('mousedown', handleOutsideClick);
-    return () => document.removeEventListener('mousedown', handleOutsideClick);
-  }, []);
-
   const [bgImage, setBgImage] = useState(HomeImageLaptop);
 
   useEffect(() => {

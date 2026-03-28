@@ -1,20 +1,35 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import { API_BASE } from "../config/api";
 import { PhotoProvider, PhotoView } from "react-photo-view";
 import "react-photo-view/dist/react-photo-view.css";
+
+const DEFAULT_WHATSAPP = "9779806438349";
 
 const ProfilePage = () => {
   const { id } = useParams(); // Get user ID from URL
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [whatsappNumber, setWhatsappNumber] = useState(DEFAULT_WHATSAPP);
+
+  useEffect(() => {
+    axios
+      .get(`${API_BASE}/api/settings`)
+      .then((res) => {
+        if (res.data?.whatsappNumber) {
+          setWhatsappNumber(res.data.whatsappNumber);
+        }
+      })
+      .catch(() => {});
+  }, []);
 
   useEffect(() => {
     const fetchUser = async () => {
       try {
         setLoading(true);
-        const res = await axios.get(`https://exoticnepal-backend.vercel.app/api/user/${id}`);
+        const res = await axios.get(`${API_BASE}/api/user/${id}`);
         setUser(res.data.user);
       } catch (err) {
         setError(err.message || "Something went wrong");
@@ -104,7 +119,7 @@ const ProfilePage = () => {
 
             {/* WhatsApp Button */}
             <a
-              href={`https://wa.me/9779806438349?text=${encodeURIComponent(
+              href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
                 `Hello, I want to book ${user.name}`
               )}`}
               target="_blank"

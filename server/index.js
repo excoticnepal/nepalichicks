@@ -5,6 +5,7 @@ import connectDB from './src/database/connect.js';
 import cityRoute from './src/routes/cityRoute.js';
 import userRoute from './src/routes/userRoute.js';
 import authRoute from './src/routes/authRoute.js';
+import settingsRoute from './src/routes/settingsRoute.js';
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -18,15 +19,14 @@ app.use(json());
 app.get('/', (req, res) => {
     res.send('API is running...');
   });
-  
+
+app.use("/api/city", cityRoute);
+app.use("/api/user", userRoute);
+app.use("/api/auth", authRoute);
+app.use("/api/settings", settingsRoute);
 
 const PORT = process.env.PORT || 5174;
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
   });
-
-
-app.use("/api/city", cityRoute);
-app.use("/api/user", userRoute);
-app.use("/api/auth", authRoute);
 
